@@ -22,10 +22,10 @@ public class Hero extends LivingThings{
     }
 
     public void wounded(int damage){
-        hitPoint -= damage;
-        if( hitPoint < 0 ) {
-            dead = true;
-            System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", name);
+        sethitPoint(gethitPoint() - damage);
+        if( gethitPoint() <= 0 ) {
+            setdead(true);
+            System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", getname());
         }
     }
 }
