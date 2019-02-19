@@ -22,9 +22,9 @@ public class Enemy extends LivingThings {
     }
 
     public void wounded(int damage){
-        sethitPoint(gethitPoint() - damage);
-        if( gethitPoint() <= 0 ) {
-            setdead(true);
+        setHitPoint(getHitPoint() - damage);
+        if( getHitPoint() <= 0 ) {
+            setDead(true);
             System.out.printf("モンスター%sは倒れた。\n", getName());
         }
     }

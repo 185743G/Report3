@@ -7,12 +7,15 @@ public class LivingThings {
     private int attack;
     private boolean dead;
 
-    public String getname(){return name ;}
+    public boolean isDead(){return  dead;}
 
-    public int gethitPoint(){ return hitPoint; }
-    public void sethitPoint(int val){ this.hitPoint = val; }
+    public String getName(){return name;}
 
-    public void setdead(boolean a){ this.dead = a; }
+    public int getHitPoint(){ return hitPoint; }
+
+    public void setHitPoint(int val){ this.hitPoint = val; }
+
+    public void setDead(boolean a){ this.dead = a; }
 
     public LivingThings(String name, int maximumHP, int attack){
         this.name = name;
@@ -22,9 +25,7 @@ public class LivingThings {
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
 
-    public boolean isDead(){return  dead;}
 
-    public String getName(){return name;}
 
     public void attack(LivingThings opponent){
         if(dead == false){
@@ -35,10 +36,10 @@ public class LivingThings {
     }
 
     public void wounded(int damage){
-        hitPoint -= damage;
-        if( hitPoint <= 0 ) {
-            dead = true;
-            System.out.printf("%sは倒れた。\n", name);
-        }
+//        hitPoint -= damage;
+//        if( hitPoint <= 0 ) {
+//            dead = true;
+//            System.out.printf("%sは倒れた。\n", name);
+//        }
     }
 }
